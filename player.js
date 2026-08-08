@@ -13,7 +13,6 @@ export class Player {
 		this.image = document.getElementById("player")
 		this.spped = 0
 		this.maxspped = 10
-
 		this.frameX
 		this.frameY
 		this.maxFrame
@@ -56,8 +55,9 @@ export class Player {
 	onGround() {
 		return this.y >= this.game.height - this.height - this.game.groundMargin
 	}
-	setState(state) {
+	setState(state,speed) {
 		this.currentState = this.states[state]
+		this.game.speed = this.game.maxSpped * speed
 		this.currentState.enter()
 	}
 }
